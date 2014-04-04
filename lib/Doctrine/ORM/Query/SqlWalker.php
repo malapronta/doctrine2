@@ -2078,7 +2078,7 @@ class SqlWalker implements TreeWalker
 
             case AST\Literal::BOOLEAN:
                 $bool = strtolower($literal->value) == 'true' ? true : false;
-                $boolVal = $this->conn->getDatabasePlatform()->convertBooleans($bool);
+                $boolVal = $this->conn->getDatabasePlatform()->convertBoolToSqlLiteral($bool);
 
                 return $boolVal;
 
